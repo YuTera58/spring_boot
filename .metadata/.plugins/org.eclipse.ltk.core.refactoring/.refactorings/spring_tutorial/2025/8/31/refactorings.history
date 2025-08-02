@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;schema.sql&apos; to &apos;spring_tutorial/src/main/resources&apos;&#x0D;&#x0A;- 元のプロジェクト: &apos;spring_tutorial&apos;&#x0D;&#x0A;- 宛先要素: &apos;spring_tutorial/src/main/resources&apos;&#x0D;&#x0A;- オリジナル要素: &apos;schema.sql&apos;&#x0D;&#x0A;- リファクタリングされた要素の参照を更新" description="ファイルを移動する" destination="/src\/main\/resources=/maven.pomderived=/true=/=/optional=/true=/" element1="src/main/resources/templates/schema.sql" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1754143235400" units="0" version="1.0"/>
+</session>
