@@ -17,5 +17,5 @@ import com.example.samuraitravel.entity.Role;
 　※Spring Data JPAの公式リファレンスに記載されているキーワードを使った独自のメソッドを追加することで、基本的なCRUD操作以外にも高度なクエリを実行できるようになります。
 **/
 public interface RoleRepository extends JpaRepository<Role, Integer> {
-
+	public Role findByName(String name);
 }
