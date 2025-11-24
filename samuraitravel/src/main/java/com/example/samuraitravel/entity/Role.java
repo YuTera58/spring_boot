@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+
 /* 【クラスのアノテーションについて】
 　@Entity ：クラスに@Entityアノテーションをつけることで、そのクラスがエンティティとして機能するようになります。
 　@Table　：@Tableアノテーションをつけることで、そのエンティティにマッピング（対応づけ）されるテーブル名を指定できます。
