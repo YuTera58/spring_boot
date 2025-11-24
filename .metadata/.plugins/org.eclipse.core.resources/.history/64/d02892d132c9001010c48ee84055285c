@@ -116,13 +116,6 @@ public class AuthController {
         return "redirect:/";
     }
     
-    /* ポイントは以下の2つです。
-　　1.引数に@RequestParamアノテーションをつける
-　　　メソッドの引数に@RequestParamアノテーションをつけることで、
-　　　リクエストパラメータの値をその引数にバインドする（割り当てる）ことができます。
-　　　・リクエストパラメータ ＝ URLの末尾に?パラメータ名=値の形式で付与されるデータや、フォームから送信されるデータなど、HTTPリクエストに含まれるデータのこと。
-　　2.トークンが存在すれば、会員を有効にする
-     */
     @GetMapping("/signup/verify")
     public String verify(@RequestParam(name = "token") String token, Model model) {
         VerificationToken verificationToken = verificationTokenService.getVerificationToken(token);
