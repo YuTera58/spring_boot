@@ -930,3 +930,76 @@
 2025-11-24 22:10:30,569 [Worker-23: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-11-24 22:10:30,581 [Worker-23: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-11-24 22:10:30,586 [Worker-23: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:24:18,856 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-12-02 21:30:02,528 [Worker-2: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:30:02,617 [Worker-2: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 9 resources from src\main\resources to target\classes
+2025-12-02 21:30:02,663 [Worker-2: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:33:11,443 [Worker-16: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 21:33:11,450 [Worker-16: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:33:11,459 [Worker-16: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:40:42,059 [Worker-13: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 21:40:42,059 [Worker-13: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 10 resources from src\main\resources to target\classes
+2025-12-02 21:40:42,122 [Worker-13: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:42:07,520 [Worker-13: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:42:07,529 [Worker-13: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 19 resources from src\main\resources to target\classes
+2025-12-02 21:42:07,545 [Worker-13: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:42:43,671 [Worker-13: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:42:43,680 [Worker-13: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 19 resources from src\main\resources to target\classes
+2025-12-02 21:42:43,696 [Worker-13: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:43:15,208 [Worker-14: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:43:15,239 [Worker-14: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 19 resources from src\main\resources to target\classes
+2025-12-02 21:43:15,257 [Worker-14: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:43:40,624 [Worker-16: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:43:40,640 [Worker-16: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 19 resources from src\main\resources to target\classes
+2025-12-02 21:43:40,674 [Worker-16: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:44:32,836 [Worker-19: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:44:32,847 [Worker-19: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 19 resources from src\main\resources to target\classes
+2025-12-02 21:44:32,870 [Worker-19: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:44:47,036 [Worker-18: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:44:47,048 [Worker-18: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 19 resources from src\main\resources to target\classes
+2025-12-02 21:44:47,069 [Worker-18: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:46:07,622 [Worker-19: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:46:07,632 [Worker-19: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 19 resources from src\main\resources to target\classes
+2025-12-02 21:46:07,654 [Worker-19: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:46:23,005 [Worker-19: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:46:23,013 [Worker-19: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 19 resources from src\main\resources to target\classes
+2025-12-02 21:46:23,026 [Worker-19: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:47:42,688 [Worker-16: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:47:42,704 [Worker-16: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 19 resources from src\main\resources to target\classes
+2025-12-02 21:47:42,730 [Worker-16: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:47:57,427 [Worker-20: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:47:57,451 [Worker-20: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 19 resources from src\main\resources to target\classes
+2025-12-02 21:47:57,471 [Worker-20: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:53:14,582 [Worker-19: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:53:14,603 [Worker-19: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 19 resources from src\main\resources to target\classes
+2025-12-02 21:53:14,626 [Worker-19: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:54:57,547 [Worker-21: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 21:54:57,556 [Worker-21: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:54:57,567 [Worker-21: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 21:55:16,591 [Worker-18: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 21:55:16,605 [Worker-18: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 21:55:16,619 [Worker-18: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 22:02:29,100 [Worker-21: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 22:02:29,108 [Worker-21: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 22:02:29,115 [Worker-21: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 22:04:09,176 [Worker-18: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 22:04:09,188 [Worker-18: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 22:04:09,198 [Worker-18: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 22:06:03,241 [Worker-21: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 22:06:03,256 [Worker-21: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 20 resources from src\main\resources to target\classes
+2025-12-02 22:06:03,280 [Worker-21: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 22:12:32,563 [Worker-23: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 22:12:32,599 [Worker-23: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 22:12:32,613 [Worker-23: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 22:13:02,601 [Worker-22: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-12-02 22:13:02,615 [Worker-22: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 22:13:02,626 [Worker-22: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 22:15:41,010 [Worker-26: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 22:15:41,024 [Worker-26: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 22:15:41,035 [Worker-26: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 22:16:35,734 [Worker-26: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 22:16:35,745 [Worker-26: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 22:16:35,753 [Worker-26: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
+2025-12-02 22:53:49,836 [Worker-27: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 22:53:49,841 [Worker-27: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-12-02 22:53:49,845 [Worker-27: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\samuraitravel\src\test\resources
