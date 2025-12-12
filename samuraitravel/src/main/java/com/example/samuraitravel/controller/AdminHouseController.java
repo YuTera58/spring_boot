@@ -1,15 +1,25 @@
 package com.example.samuraitravel.controller;
 
+import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.samuraitravel.entity.House;
+import com.example.samuraitravel.form.HouseRegisterForm;
 import com.example.samuraitravel.service.HouseService;
 
 /*
@@ -37,13 +47,88 @@ public class AdminHouseController {
 //
 //        return "admin/houses/index";
 //    }
+
+//    @GetMapping（旧コード）
+//    public String index(@PageableDefault(page = 0, size = 10, sort = "id", direction = Direction.ASC) Pageable pageable, Model model) {
+//        Page<House> housePage = houseService.findAllHouses(pageable);
+//
+//        model.addAttribute("housePage", housePage);
+//
+//        return "admin/houses/index";
+//    }
     
-    @GetMapping
-    public String index(@PageableDefault(page = 0, size = 10, sort = "id", direction = Direction.ASC) Pageable pageable, Model model) {
-        Page<House> housePage = houseService.findAllHouses(pageable);
+	@GetMapping
+	public String index(@RequestParam(name = "keyword", required = false) String keyword,
+	                    @PageableDefault(page = 0, size = 10, sort = "id", direction = Direction.ASC) Pageable pageable,
+	                    Model model)
+	{        
+	    Page<House> housePage;
+	
+	    // keywordパラメータが存在する場合は部分一致検索を行い、そうでなければ通常どおり全件のデータを取得しています。
+	    if (keyword != null && !keyword.isEmpty()) {
+	        housePage = houseService.findHousesByNameLike(keyword, pageable);
+	    } else {
+	        housePage = houseService.findAllHouses(pageable);
+	    }        
+	
+	    model.addAttribute("housePage", housePage);
+	    model.addAttribute("keyword", keyword);     //ビューにkeyword（文字列）を渡しています。
+	
+	    return "admin/houses/index";
+	}
+	
+	/*　@PathVariableアノテーション
+	　コントローラ内ではメソッドの引数に@PathVariableアノテーションをつけることで、URLの一部をその引数にバインドする（割り当てる）ことができます。
+	　これにより、URLの一部を変数のように扱って、コントローラ内でその値を利用することができます。
+	　（例）https://ドメイン名/admin/houses/3 にアクセスした場合
+	　URLの{id}の部分にある値（3）がshow()メソッドの引数idにバインドされます。
+	　これにより、show()メソッド内ではidの値を利用して処理を行うことができます。
+	　@PathVariableアノテーションのname属性にはバインドさせたいURLの{}内の文字列（今回は/admin/houses/{id}なので、"id"）を指定します。
+	 */
+    @GetMapping("/{id}")
+    public String show(@PathVariable(name = "id") Integer id, RedirectAttributes redirectAttributes, Model model) {
+        Optional<House> optionalHouse  = houseService.findHouseById(id);
 
-        model.addAttribute("housePage", housePage);
+        // 民宿が存在しない場合に民宿一覧ページにリダイレクトさせる処理
+        if (optionalHouse.isEmpty()) {
+            redirectAttributes.addFlashAttribute("errorMessage", "民宿が存在しません。");
 
-        return "admin/houses/index";
+            return "redirect:/admin/houses";
+        }
+
+        /* Optional型をHouse型に変換する
+        　民宿詳細ページではエンティティの各フィールドにアクセスし、民宿の説明や住所などを表示させます。
+        　しかし、Optional<House>型のままではエンティティの各フィールドに直接アクセスできません。
+        　そこでOptionalクラスのget()メソッドを使い、House型に変換してからビューに渡しています。
+        */
+        House house = optionalHouse.get();
+        model.addAttribute("house", house);
+
+        return "admin/houses/show";
+    }
+    
+    @GetMapping("/register")
+    public String register(Model model) {
+        model.addAttribute("houseRegisterForm", new HouseRegisterForm());
+
+        return "admin/houses/register";
+    }
+    
+    @PostMapping("/create")
+    public String create(@ModelAttribute @Validated HouseRegisterForm houseRegisterForm,
+                         BindingResult bindingResult,
+                         RedirectAttributes redirectAttributes,
+                         Model model)
+    {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("houseRegisterForm", houseRegisterForm);
+
+            return "admin/houses/register";
+        }
+
+        houseService.createHouse(houseRegisterForm);
+        redirectAttributes.addFlashAttribute("successMessage", "民宿を登録しました。");
+
+        return "redirect:/admin/houses";
     }
 }
