@@ -15,7 +15,7 @@ public class HouseService {
         this.houseRepository = houseRepository;
     }
 
-//    // すべての民宿を取得する（一覧リスト表示）
+//    // すべての民宿を取得する
 //    public List<House> findAllHouses() {
 //        return houseRepository.findAll();
 //    }

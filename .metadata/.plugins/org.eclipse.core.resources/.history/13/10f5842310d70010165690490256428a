@@ -33,8 +33,13 @@
                                        <th scope="col"></th>
                                    </tr>
                                </thead>
+                               <!--
+								th:each属性の値は"house : ${houses}"のように、各ループで一時的に代入される変数名（house）と、繰り返し処理を実行したい変数名（houses）を指定します。
+                                なおThymeleafテンプレート内では、${house.id}のようにエンティティのフィールド名を指定することで、自動的にゲッターを使ってそのフィールドの値を取得してくれます。
+                               -->
                                <tbody>
-                                   <tr th:each="house : ${houses}">
+                                   <!-- <tr th:each="house : ${houses}"> ※一覧リスト表示の時のコード -->
+							       <tr th:each="house : ${housePage}">
                                        <td th:text="${house.id}"></td>
                                        <td th:text="${house.name}"></td>
                                        <td th:text="${house.postalCode}"></td>
