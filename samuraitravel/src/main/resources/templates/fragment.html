@@ -55,7 +55,9 @@
                                    </a>
 
                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownGeneral">
-                                       <a class="dropdown-item samuraitravel-dropdown-item" href="#">会員情報</a>
+                                       <!-- <a class="dropdown-item samuraitravel-dropdown-item" href="#">会員情報</a> 旧コード -->
+                                       <!-- ↓ 会員用の会員詳細ページを追加したので置き換え -->
+                                       <a class="dropdown-item samuraitravel-dropdown-item" th:href="@{/user}">会員情報</a>
                                        <a class="dropdown-item samuraitravel-dropdown-item" href="#">予約一覧</a>
 
                                        <div class="dropdown-divider"></div>
@@ -74,7 +76,7 @@
                                    </a>
 
                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAdmin">
-                                       <a class="dropdown-item samuraitravel-dropdown-item" href="#">会員一覧</a>
+                                       <a class="dropdown-item samuraitravel-dropdown-item" th:href="@{/admin/users}">会員一覧</a>
                                        <a class="dropdown-item samuraitravel-dropdown-item" th:href="@{/admin/houses}">民宿一覧</a>
 
                                        <div class="dropdown-divider"></div>
