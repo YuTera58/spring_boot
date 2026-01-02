@@ -1,11 +1,23 @@
 package com.example.samuraitravel.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.samuraitravel.entity.House;
+import com.example.samuraitravel.service.HouseService;
 
 //クラスに@Controllerアノテーションをつけることで、そのクラスがコントローラとして機能するようになります。
 @Controller
 public class HomeController {
+	private final HouseService houseService;
+
+    public HomeController(HouseService houseService) {
+        this.houseService = houseService;
+    }
+    
 	/*
 	　コントローラ内のメソッドに@GetMappingアノテーションをつけることで、HTTPリクエストのGETメソッドをそのメソッドにマッピング（対応づけ） できます。
 	　なお、引数にはマッピングするルートパス（ドメイン名を省略したパス）を指定します。
@@ -14,7 +26,10 @@ public class HomeController {
 　　　　　POST　：フォームの入力内容を送信してデータの作成や更新を行う場合など、サーバー上のデータを変更するために使う。
 	**/
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
+        List<House> newHouses = houseService.findTop10HousesByOrderByCreatedAtDesc();
+        model.addAttribute("newHouses", newHouses);
+        
     	/*
     	　メソッドの最後では、呼び出すビューのパス（src/main/resources/templates/以降のパス）をreturnで返します。
     	　なお、拡張子の.htmlは省略する点に注意してください。
