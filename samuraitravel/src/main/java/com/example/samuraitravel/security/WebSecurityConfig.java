@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
 /* ポイントは以下の5つです。
@@ -28,7 +29,8 @@ public class WebSecurityConfig {
   //（旧コード）.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/").permitAll()  // すべてのユーザーにアクセスを許可するURL
   //（旧コード）.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/", "/signup/**").permitAll()  // すべてのユーザーにアクセスを許可するURL
   //（旧コード）.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/", "/signup/**", "/houses").permitAll()  // すべてのユーザーにアクセスを許可するURL
-                .requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/", "/signup/**", "/houses", "/houses/{id}").permitAll()  // すべてのユーザーにアクセスを許可するURL
+  //（旧コード）.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/", "/signup/**", "/houses", "/houses/{id}").permitAll()  // すべてのユーザーにアクセスを許可するURL
+                .requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/", "/signup/**", "/houses", "/houses/{id}", "/stripe/webhook").permitAll()  // すべてのユーザーにアクセスを許可するURL
                 .requestMatchers("/admin/**").hasRole("ADMIN")  // 管理者にのみアクセスを許可するURL
                 .anyRequest().authenticated()                   // 上記以外のURLはログインが必要（会員または管理者のどちらでもOK）
             )
@@ -42,7 +44,13 @@ public class WebSecurityConfig {
             .logout((logout) -> logout
                 .logoutSuccessUrl("/?loggedOut")  // ログアウト時のリダイレクト先URL
                 .permitAll()
-            );
+            )
+            .csrf(csrf -> csrf.ignoringRequestMatchers(new AntPathRequestMatcher("/stripe/webhook")));
+            /** .csrf(csrf -> csrf.ignoringRequestMatchers(new AntPathRequestMatcher("/stripe/webhook"))); の解説
+             * Spring Securityを利用している場合、POSTメソッドでリクエストを行うとCSRF対策のチェックが入ります。
+             * フォームの場合は自動的にチェック用のトークンを生成してくれるので問題ないのですが、今回のように外部からPOST送信を受ける場合、そのままではCSRF対策のチェックによってアクセスが拒否されてしまいます。
+             * そこで新しく追加した以下のコードでは、「/stripe/webhook」に対するPOST送信についてはCSRF対策のチェックを無効にしています。
+             */
 
         return http.build();
     }

@@ -1,6 +1,6 @@
 package com.example.samuraitravel.controller;
 
-import static org.assertj.core.api.Assertions.*;
+//import static org.assertj.core.api.Assertions.*;   //決済機能なしの場合
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -15,11 +15,11 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.transaction.annotation.Transactional;   //決済機能なしの場合
 
 import com.example.samuraitravel.dto.ReservationDTO;
-import com.example.samuraitravel.entity.Reservation;
-import com.example.samuraitravel.service.ReservationService;
+//import com.example.samuraitravel.entity.Reservation;   //決済機能なしの場合
+//import com.example.samuraitravel.service.ReservationService;   //決済機能なしの場合
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -28,8 +28,9 @@ public class ReservationControllerTest {
     @Autowired
     private MockMvc mockMvc;
     
-    @Autowired
-    private ReservationService reservationService;
+    //決済機能なしの場合のコード
+    //@Autowired
+    //private ReservationService reservationService;
 
     @Test
     public void 未ログインの場合は会員用の予約一覧ページからログインページにリダイレクトする() throws Exception {
@@ -102,6 +103,7 @@ public class ReservationControllerTest {
                .andExpect(view().name("reservations/confirm"));
     }
     
+    /* 決済機能なしの場合のテスト処理：create()メソッドで予約情報の登録処理を行い、予約一覧ページにリダイレクトさせる
     @Test
     @Transactional
     public void 未ログインの場合は予約せずにログインページにリダイレクトする() throws Exception {
@@ -156,4 +158,5 @@ public class ReservationControllerTest {
         assertThat(reservation.getNumberOfPeople()).isEqualTo(1);
         assertThat(reservation.getAmount()).isEqualTo(6000);
     }
+    */
 }

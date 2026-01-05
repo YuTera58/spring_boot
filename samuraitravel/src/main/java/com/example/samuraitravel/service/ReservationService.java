@@ -3,6 +3,7 @@ package com.example.samuraitravel.service;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
@@ -11,12 +12,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 
-import com.example.samuraitravel.dto.ReservationDTO;
 import com.example.samuraitravel.entity.House;
 import com.example.samuraitravel.entity.Reservation;
 import com.example.samuraitravel.entity.User;
 import com.example.samuraitravel.repository.HouseRepository;
 import com.example.samuraitravel.repository.ReservationRepository;
+import com.example.samuraitravel.repository.UserRepository;
 
 import jakarta.persistence.EntityNotFoundException;
 
@@ -25,10 +26,12 @@ import jakarta.persistence.EntityNotFoundException;
 public class ReservationService {
     private final ReservationRepository reservationRepository;
     private final HouseRepository houseRepository;
+    private final UserRepository userRepository;
 
-    public ReservationService(ReservationRepository reservationRepository, HouseRepository houseRepository) {
+    public ReservationService(ReservationRepository reservationRepository, HouseRepository houseRepository, UserRepository userRepository) {
         this.reservationRepository = reservationRepository;
         this.houseRepository = houseRepository;
+        this.userRepository = userRepository;
     }
 
     // 指定されたユーザーに紐づく予約を作成日時が新しい順に並べ替え、ページングされた状態で取得する
@@ -78,21 +81,32 @@ public class ReservationService {
     }
     
     @Transactional
-    public void createReservation(ReservationDTO reservationDTO, User user) {
+    public void createReservation(Map<String, String> sessionMetadata) {
         Reservation reservation = new Reservation();
+        
+        Integer houseId = Integer.valueOf(sessionMetadata.get("houseId"));
+        Integer userId = Integer.valueOf(sessionMetadata.get("userId"));
 
         // Optionalクラスが提供するorElseThrow()メソッドを使うことで、値が存在する場合はその値を返し、存在しない場合は例外をスローしてくれる
         // EntityNotFoundExceptionクラスは、「エンティティにアクセスしたが、そのエンティティがデータベース上に存在しない」ことを表すための例外クラスである。
         // コンストラクタの引数には、例外発生時に表示させるメッセージを渡す
-        Optional<House> optionalHouse = houseRepository.findById(reservationDTO.getHouseId());
+        Optional<House> optionalHouse = houseRepository.findById(houseId);
         House house = optionalHouse.orElseThrow(() -> new EntityNotFoundException("指定されたIDの民宿が存在しません。"));
 
+        Optional<User> optionalUser = userRepository.findById(userId);
+        User user = optionalUser.orElseThrow(() -> new EntityNotFoundException("指定されたIDのユーザーが存在しません。"));    
+
+        LocalDate checkinDate = LocalDate.parse(sessionMetadata.get("checkinDate"));
+        LocalDate checkoutDate = LocalDate.parse(sessionMetadata.get("checkoutDate"));
+        Integer numberOfPeople = Integer.valueOf(sessionMetadata.get("numberOfPeople"));
+        Integer amount = Integer.valueOf(sessionMetadata.get("amount"));
+        
         reservation.setHouse(house);
         reservation.setUser(user);
-        reservation.setCheckinDate(reservationDTO.getCheckinDate());
-        reservation.setCheckoutDate(reservationDTO.getCheckoutDate());
-        reservation.setNumberOfPeople(reservationDTO.getNumberOfPeople());
-        reservation.setAmount(reservationDTO.getAmount());
+        reservation.setCheckinDate(checkinDate);
+        reservation.setCheckoutDate(checkoutDate);
+        reservation.setNumberOfPeople(numberOfPeople);
+        reservation.setAmount(amount);
 
         reservationRepository.save(reservation);
     }
