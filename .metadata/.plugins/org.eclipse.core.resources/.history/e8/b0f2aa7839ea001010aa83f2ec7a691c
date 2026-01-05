@@ -5,8 +5,6 @@ import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-
-// DTOとはData Transfer Objectの略で、その名のとおりデータを運ぶためのオブジェクトのこと
 @Data
 @AllArgsConstructor
 public class ReservationDTO {
