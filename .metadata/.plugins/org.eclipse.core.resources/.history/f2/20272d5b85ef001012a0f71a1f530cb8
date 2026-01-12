@@ -33,7 +33,7 @@ public class HouseController {
     private final ReviewService reviewService;
     private final FavoriteService favoriteService;
 
-    public HouseController(HouseService houseService, ReviewService reviewService, FavoriteService favoriteService) {
+    public HouseController(HouseService houseService, ReviewService reviewService) {
         this.houseService = houseService;
         this.reviewService = reviewService;
         this.favoriteService = favoriteService;
