@@ -27,8 +27,10 @@ public class HomeController {
 	**/
     @GetMapping("/")
     public String index(Model model) {
-        List<House> newHouses = houseService.findTop10HousesByOrderByCreatedAtDesc();
+        List<House> newHouses = houseService.findTop8HousesByOrderByCreatedAtDesc();
+        List<House> popularHouses = houseService.findTop3HousesByOrderByReservationCountDesc();
         model.addAttribute("newHouses", newHouses);
+        model.addAttribute("popularHouses", popularHouses);
         
     	/*
     	　メソッドの最後では、呼び出すビューのパス（src/main/resources/templates/以降のパス）をreturnで返します。
