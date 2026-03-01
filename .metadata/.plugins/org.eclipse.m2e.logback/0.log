@@ -3244,3 +3244,6 @@
 2026-03-01 16:42:20,660 [Worker-40: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2026-03-01 16:42:20,666 [Worker-40: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 9 resources from src\main\resources to target\classes
 2026-03-01 16:42:20,675 [Worker-40: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\nagoyameshi\src\test\resources
+2026-03-01 16:45:58,434 [Worker-37: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-03-01 16:45:58,442 [Worker-37: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 9 resources from src\main\resources to target\classes
+2026-03-01 16:45:58,450 [Worker-37: ビルド] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\nagoyameshi\src\test\resources
