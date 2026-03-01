@@ -9396,3 +9396,218 @@ java.lang.InterruptedException
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
 >>>>>>> feature-email-verification
+!SESSION 2026-03-01 17:29:08.067 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2026-03-01 17:29:29.649
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.eclemma.core 4 0 2026-03-01 17:29:29.741
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.core [194]
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+       org.jacoco.core [651]
+  Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+       org.jacoco.report [652]
+         Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+         Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+         Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+         Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.1"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.1"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.eclemma.ui 4 0 2026-03-01 17:29:29.770
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.ui [196]
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+       org.jacoco.core [651]
+  Unresolved requirement: Require-Bundle: org.eclipse.eclemma.core
+    -> Bundle-SymbolicName: org.eclipse.eclemma.core; bundle-version="3.1.8.202311140945"; singleton:="true"
+       org.eclipse.eclemma.core [194]
+         Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+         Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+              org.jacoco.report [652]
+                Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+                Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+                Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+                Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.1"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.1"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1852)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1845)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1786)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1750)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1672)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2026-03-01 17:29:31.167
+!MESSAGE Unable to load resource file:/C:/Users/Yu-Ma_WPC/Terakoya_Study/spring_boot/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+!STACK 0
+org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException: org.xml.sax.SAXParseExceptionpublicId: file:/C:/Users/Yu-Ma_WPC/Terakoya_Study/spring_boot/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/C:/Users/Yu-Ma_WPC/Terakoya_Study/spring_boot/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 2; columnNumber: 2; ドキュメント内のルート要素より前のマークアップは整形式である必要があります。
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.handleDemandLoadException(ResourceSetImpl.java:319)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:278)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getResource(ResourceSetImpl.java:406)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.getResource(ResourceHandler.java:290)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadResource(ResourceHandler.java:266)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadMostRecentModel(ResourceHandler.java:169)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.loadApplicationModel(E4Application.java:371)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:247)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:577)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:342)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:555)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+Caused by: org.xml.sax.SAXParseExceptionpublicId: file:/C:/Users/Yu-Ma_WPC/Terakoya_Study/spring_boot/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/C:/Users/Yu-Ma_WPC/Terakoya_Study/spring_boot/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 2; columnNumber: 2; ドキュメント内のルート要素より前のマークアップは整形式である必要があります。
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+	at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:862)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:326)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:260)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1563)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1342)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoad(ResourceSetImpl.java:259)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:274)
+	... 23 more
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2026-03-01 17:29:31.169
+!MESSAGE The persisted application model has no top-level window. Reinitializing with the default application model.
+!STACK 0
+java.lang.Exception
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadMostRecentModel(ResourceHandler.java:174)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.loadApplicationModel(E4Application.java:371)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:247)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:577)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:342)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:555)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+
+!ENTRY mergedoc.encoding 2 0 2026-03-01 18:05:38.266
+!MESSAGE リソース '/nagoyameshi/src/test/java/com/example/nagoyameshi/AdminUserControllerTest.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2026-03-01 18:05:38.267
+!MESSAGE リソース '/nagoyameshi/src/test/java/com/example/nagoyameshi/AdminUserControllerTest.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2026-03-01 18:05:38.314
+!MESSAGE リソース '/nagoyameshi/src/test/java/com/example/nagoyameshi/AdminUserControllerTest.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2026-03-01 18:05:38.315
+!MESSAGE リソース '/nagoyameshi/src/test/java/com/example/nagoyameshi/AdminUserControllerTest.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2026-03-01 18:05:38.317
+!MESSAGE リソース '/nagoyameshi/src/test/java/com/example/nagoyameshi/AdminUserControllerTest.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2026-03-01 18:05:38.318
+!MESSAGE リソース '/nagoyameshi/src/test/java/com/example/nagoyameshi/AdminUserControllerTest.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2026-03-01 18:05:38.376
+!MESSAGE リソース '/nagoyameshi/src/test/java/com/example/nagoyameshi/AdminUserControllerTest.java' が存在しません。
+
+!ENTRY mergedoc.encoding 2 0 2026-03-01 18:05:38.377
+!MESSAGE リソース '/nagoyameshi/src/test/java/com/example/nagoyameshi/AdminUserControllerTest.java' が存在しません。
