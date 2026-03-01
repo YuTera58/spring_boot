@@ -41,7 +41,6 @@ INDEX VERSION 1.134+C:\Users\Yu-Ma_WPC\Terakoya_Study\spring_boot\.metadata\.plu
 2642115926.index
 3840615651.index
 1063554276.index
-1461014136.index
 3726044703.index
 947232590.index
 2566130468.index
