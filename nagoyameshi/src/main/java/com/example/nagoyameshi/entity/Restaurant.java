@@ -20,7 +20,7 @@ import lombok.ToString;
 @Entity
 @Table(name = "restaurants")
 @Data
-@ToString(exclude = "categoriesRestaurants")
+@ToString(exclude = {"categoriesRestaurants", "regularHolidaysRestaurants"})
 public class Restaurant {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,5 +68,9 @@ public class Restaurant {
     */
    @OneToMany(mappedBy = "restaurant", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
    @OrderBy("id ASC") // デフォルトの並び順が「idが小さい順（昇順）」になる
-   private List<CategoryRestaurant> categoriesRestaurants; 
+   private List<CategoryRestaurant> categoriesRestaurants;
+   
+   @OneToMany(mappedBy = "restaurant", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+   @OrderBy("id ASC")
+   private List<RegularHolidayRestaurant> regularHolidaysRestaurants;
 }
