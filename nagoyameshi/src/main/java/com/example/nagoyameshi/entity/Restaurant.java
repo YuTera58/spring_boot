@@ -2,18 +2,25 @@ package com.example.nagoyameshi.entity;
 
 import java.sql.Timestamp;
 import java.time.LocalTime;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OrderBy;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Table(name = "restaurants")
 @Data
+@ToString(exclude = "categoriesRestaurants")
 public class Restaurant {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -55,4 +62,11 @@ public class Restaurant {
 
    @Column(name = "updated_at", insertable = false, updatable = false)
    private Timestamp updatedAt;
+   
+   /* カスケード削除の有効
+    * 親テーブルのレコードを削除したときに、子テーブルの関連するレコードも同時に削除する機能の事
+    */
+   @OneToMany(mappedBy = "restaurant", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+   @OrderBy("id ASC") // デフォルトの並び順が「idが小さい順（昇順）」になる
+   private List<CategoryRestaurant> categoriesRestaurants; 
 }
