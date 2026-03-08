@@ -19,12 +19,8 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests((requests) -> requests
-  //（旧コード）.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/").permitAll()  // すべてのユーザーにアクセスを許可するURL
-            	.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/", "/signup/**").permitAll()  // すべてのユーザーにアクセスを許可するURL
-  //（旧コード）.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/", "/signup/**", "/houses").permitAll()  // すべてのユーザーにアクセスを許可するURL
-  //（旧コード）.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/", "/signup/**", "/houses", "/houses/{id}").permitAll()  // すべてのユーザーにアクセスを許可するURL
-  //（旧コード）.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/", "/signup/**", "/houses", "/houses/{id}", "/stripe/webhook").permitAll()  // すべてのユーザーにアクセスを許可するURL
-              //.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/", "/signup/**", "/houses", "/houses/{id}", "/stripe/webhook", "/houses/{houseId}/reviews").permitAll()  // すべてのユーザーにアクセスを許可するURL
+                .requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/", "/signup/**").permitAll()  // すべてのユーザーにアクセスを許可するURL
+            	.requestMatchers("/restaurants/**").hasAnyRole("ANONYMOUS", "FREE_MEMBER", "PAID_MEMBER")  // 未ログインのユーザー、無料会員、有料会員にアクセスを許可するURL
             	.requestMatchers("/admin/**").hasRole("ADMIN")  // 管理者にのみアクセスを許可するURL
                 .anyRequest().authenticated()                   // 上記以外のURLはログインが必要（会員または管理者のどちらでもOK）
             )
